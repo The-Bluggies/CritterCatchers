@@ -14,8 +14,10 @@ public class Player : MonoBehaviour
     private Vector2 movementDirection;
 
     private int shooting;
+    public int lives;
 
     public GameObject Bullet;
+    public GameManager gameManager;
 
 
     // Start is called before the first frame update
@@ -24,6 +26,8 @@ public class Player : MonoBehaviour
         speed = 12f;
         rb = GetComponent<Rigidbody2D>();
         shooting = 1;
+        lives = 3;
+        GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -64,5 +68,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void loseALife()
+    {
+        lives--;
 
+        if (lives == 0)
+        {
+            Destroy(this.gameObject);
+            gameManager.gameOver();
+
+
+        }
+    }
 }

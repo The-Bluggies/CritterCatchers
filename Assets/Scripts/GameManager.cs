@@ -30,4 +30,15 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void gameOver()
+    {
+        isPlayerAlive = false;
+
+
+
+    }
+
+
+
 }
