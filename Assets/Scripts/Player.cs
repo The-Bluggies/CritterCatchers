@@ -6,15 +6,14 @@ public class Player : MonoBehaviour
 {
     private float horizontalInput;
     private float verticalInput;
-
-    private Rigidbody2D rb;
-
     public float speed;
-
-    private Vector2 movementDirection;
 
     private int shooting;
     public int lives;
+
+    private Rigidbody2D rb;
+
+    private Vector2 movementDirection;
 
     public GameObject Bullet;
     public GameManager gameManager;
@@ -27,7 +26,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         shooting = 1;
         lives = 3;
-        GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -40,7 +39,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         // This determines player movement by considering direction and speed
-        // KEEP THIS HERE BECAUSE Rigidbody2D will get scuffed in normal Update
+        // KEEP THIS HERE BECAUSE Rigidbody2D will get scuffed in normal Update since it uses Unity's physics system
         rb.velocity = movementDirection * speed;
 
 

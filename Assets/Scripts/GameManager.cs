@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Restart();
+        killSwitch();
     }
 
     public void gameOver()
@@ -36,8 +37,26 @@ public class GameManager : MonoBehaviour
         isPlayerAlive = false;
 
 
+    }
+
+    void Restart()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && isPlayerAlive == false)
+        {
+            SceneManager.LoadScene("Level_1");
+        }
 
     }
+
+    void killSwitch()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("Application will (hopefully) close in a build");
+        }
+    }
+
 
 
 
