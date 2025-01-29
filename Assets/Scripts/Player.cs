@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float horizontalInput;
-    private float verticalInput;
+    private float horizontalInput, verticalInput;
     public float speed;
 
     private int shooting;

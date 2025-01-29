@@ -1,0 +1,16 @@
+Scale for backgrounds is 1.85, then set position to 0, 0, 5 for perfect set with camera
+
+Horizontal length of backgrounds, when scaled to 1.85, will be 35.5
+
+When organizing background bits into GameObjects, remember to set parent GameObject's transform.Position values to 0, 0, 0 unless you're trying to do something specific
+
+
+Parallaxing effect script is already in the Scripts folder:
+As a general rule of thumb, when setting background speeds, every subsequent layer's speed should be halved to achieve the parallaxing event
+
+i.e.
+Front Layer 20     <-- Consider the front layer the "base value"
+Middle Layer 10
+Back Layer 5
+
+Don't forget to rename stuff to appropriate values
