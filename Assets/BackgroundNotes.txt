@@ -9,7 +9,7 @@ Parallaxing effect script is already in the Scripts folder:
 As a general rule of thumb, when setting background speeds, every subsequent layer's speed should be halved to achieve the parallaxing event
 
 i.e.
-Front Layer 20     <-- Consider the front layer the "base value"
+Front Layer 20
 Middle Layer 10
 Back Layer 5
 
