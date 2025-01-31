@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
         {
             GameObject.Find("Player(Clone)").GetComponent<Player>().loseALife();
             Destroy(this.gameObject);
-            
+            Debug.Log("Player is hit");
 
 
         }
