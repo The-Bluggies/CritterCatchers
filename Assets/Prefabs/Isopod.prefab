@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7686684414469391652}
   - component: {fileID: 7337210916937351385}
-  - component: {fileID: -6030977463314134192}
   - component: {fileID: 7841709591658598932}
   - component: {fileID: 7783609083406544079}
+  - component: {fileID: 9153034658547113984}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Isopod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,20 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6030977463314134192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3355307708709263678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddffb0e52eda2bb46aef2284daf81613, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 7057496126316112834, guid: ebc5c400f777d1542ad4290ef0afe1f0, type: 3}
-  Bullet: {fileID: 3864219678481319567, guid: 2926e9e52518c1a4198a02c519413d9a, type: 3}
 --- !u!61 &7841709591658598932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +153,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9153034658547113984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3355307708709263678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184a051d1baa7bd4d9d02187a91dad3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  Bullet: {fileID: 0}
