@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
     void EnemyMovement()
     {
-        transform.Translate(new Vector2(0, 1) * Time.deltaTime * 10f);
+        transform.Translate(new Vector2(-1, 0) * Time.deltaTime * 10f);
 
 
     }
