@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy: MonoBehaviour
+public class AcidAttack : MonoBehaviour
 {
-    public GameObject Player;
-    public GameObject Bullet;
+    public float acidSpeed = 6f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,22 +15,17 @@ public class Enemy: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyMovement();
-    }
+        transform.Translate(new Vector2(-1, 0) * Time.deltaTime * acidSpeed);
 
-    void EnemyMovement()
-    {
-        transform.Translate(new Vector2(-1, 0) * Time.deltaTime * 10f);
+        if (transform.position.x >= 18.5)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
-        if (whatDidIHit.tag == "Weapon")
-        {
-            Destroy(this.gameObject);
-            Destroy(whatDidIHit.gameObject);
-
-        } else if (whatDidIHit.tag == "Player")
+        if (whatDidIHit.tag == "Player")
         {
             GameObject.Find("Player(Clone)").GetComponent<Player>().loseALife();
             Destroy(this.gameObject);

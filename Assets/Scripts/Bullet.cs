@@ -6,8 +6,6 @@ public class Bullet : MonoBehaviour
 {
     public float bulletspeed;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +20,6 @@ public class Bullet : MonoBehaviour
         if (transform.position.x >= 18.5)
         {
             Destroy(this.gameObject);
-
-
         }
     }
-
-
 }
