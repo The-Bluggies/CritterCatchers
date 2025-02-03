@@ -17,6 +17,12 @@ public class Enemy: MonoBehaviour
     void Update()
     {
         EnemyMovement();
+
+        if (transform.position.x <= -20)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Enemy left the game");
+        }
     }
 
     void EnemyMovement()

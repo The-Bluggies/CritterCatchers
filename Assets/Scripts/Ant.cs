@@ -24,20 +24,25 @@ public class Ant : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        InvokeRepeating("RangedAttack", 1f, 3f);
+        InvokeRepeating("RangedAttack", 1f, 2f);
     }
 
     // Update is called once per frame
     void Update()
     {
         AntSine();
-
     }
 
     void AntSine()
     {
-        startPosition -= transform.right * Time.deltaTime * moveSpeed;
-        transform.position = startPosition + transform.up * Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        if (transform.position.x >= 11)
+        {
+            startPosition -= transform.right * Time.deltaTime * moveSpeed;
+            transform.position = startPosition + transform.up * Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        } else
+        {
+            transform.position = startPosition + transform.up * Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        }
     }
 
     void RangedAttack()
