@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private int shooting;
     public int lives;
 
+    public int score;
+
     private Rigidbody2D rb;
 
     private Vector2 movementDirection;
@@ -17,14 +19,20 @@ public class Player : MonoBehaviour
     public GameObject Bullet;
     public GameManager gameManager;
 
+    public AudioClip jarSound;
+    public AudioClip damageSound;
+    public AudioClip loseSound;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         speed = 12f;
         rb = GetComponent<Rigidbody2D>();
         shooting = 1;
         lives = 3;
+        score = 0;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
@@ -59,23 +67,28 @@ public class Player : MonoBehaviour
                 case 1:
                     //Normal Shot
                         Instantiate(Bullet, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
+                        audioSource.PlayOneShot(jarSound);
                     break;
 
             }
 
         }
     }
-
     public void loseALife()
     {
         lives--;
+        audioSource.PlayOneShot(damageSound);
 
         if (lives == 0)
         {
             Destroy(this.gameObject);
             gameManager.gameOver();
-
-
+            audioSource.PlayOneShot(loseSound);
         }
+    }
+
+    public void finalScore()
+    {
+        score+=1;
     }
 }

@@ -18,11 +18,14 @@ public class Ant : MonoBehaviour
     public GameObject Bullet;
     public GameObject AcidAttack;
 
-
+    public AudioClip attackSound;
+    public AudioClip collectSound;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
         startPosition = transform.position;
         InvokeRepeating("RangedAttack", 1f, 3f);
     }
@@ -43,12 +46,15 @@ public class Ant : MonoBehaviour
     void RangedAttack()
     {
         Instantiate(AcidAttack,transform.position, Quaternion.identity);
+        audioSource.PlayOneShot(attackSound);
     }
 
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
         if (whatDidIHit.tag == "Weapon")
         {
+            audioSource.PlayOneShot(collectSound);
+            GameObject.Find("Player(Clone)").GetComponent<Player>().finalScore();
             Destroy(this.gameObject);
             Destroy(whatDidIHit.gameObject);
 

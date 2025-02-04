@@ -18,10 +18,14 @@ public class AntInverted : MonoBehaviour
     public GameObject Bullet;
     public GameObject AcidAttack;
 
+    public AudioClip attackSound;
+    public AudioClip collectSound;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); 
         startPosition = transform.position;
         InvokeRepeating("RangedAttack", 0, 2f);
     }
@@ -36,12 +40,15 @@ public class AntInverted : MonoBehaviour
     void RangedAttack()
     {
         Instantiate(AcidAttack, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
+        audioSource.PlayOneShot(attackSound);
     }
 
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
         if (whatDidIHit.tag == "Weapon")
         {
+            audioSource.PlayOneShot(collectSound);
+            GameObject.Find("Player(Clone)").GetComponent<Player>().finalScore();
             Destroy(this.gameObject);
             Destroy(whatDidIHit.gameObject);
 

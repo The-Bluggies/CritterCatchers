@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 600932111868127761}
   - component: {fileID: 7846218372423875106}
   - component: {fileID: 6456565505973681118}
-  - component: {fileID: 8862221304959581381}
+  - component: {fileID: -4140075188587703545}
   m_Layer: 0
   m_Name: AcidAttack
   m_TagString: Untagged
@@ -137,7 +137,7 @@ PolygonCollider2D:
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
   m_UseDelaunayMesh: 0
---- !u!114 &8862221304959581381
+--- !u!114 &-4140075188587703545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,3 +150,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acidSpeed: 14
+  attackSound: {fileID: 0}
