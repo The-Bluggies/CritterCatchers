@@ -175,6 +175,7 @@ MonoBehaviour:
   AcidAttack: {fileID: 4005862875744089856, guid: 2edbb2ff038b1254d9803854d392e96b, type: 3}
   attackSound: {fileID: 8300000, guid: ccb42bef9e0194946802bf33b439423f, type: 3}
   collectSound: {fileID: 8300000, guid: 201b2ac9ce5c97e45b12ed26341b85c9, type: 3}
+  enemySound: {fileID: 8300000, guid: ded1a5648bb7fb14c9e365fbd186c29d, type: 3}
 --- !u!82 &4626152257158805460
 AudioSource:
   m_ObjectHideFlags: 0

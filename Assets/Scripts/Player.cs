@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -19,6 +20,14 @@ public class Player : MonoBehaviour
     public GameObject Bullet;
     public GameManager gameManager;
 
+   /* public GameObject Healthtext;
+    public GameObject Scoretext;
+    public GameObject Gametext;
+
+    TextMeshProUGUI Healthtext_text;
+    TextMeshProUGUI Scoretext_text;
+    TextMeshProUGUI Gametext_text;*/
+
     public AudioClip jarSound;
     public AudioClip damageSound;
     public AudioClip loseSound;
@@ -27,6 +36,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       /* Healthtext_text = Healthtext.GetComponent<TextMeshProUGUI>();
+        Scoretext_text = Scoretext.GetComponent<TextMeshProUGUI>();
+        Gametext_text = Gametext.GetComponent<TextMeshProUGUI>(); */
         audioSource = GetComponent<AudioSource>();
         speed = 12f;
         rb = GetComponent<Rigidbody2D>();
@@ -39,6 +51,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // Scoretext_text.text = "Score: " + score.ToString();
         PlayerDirection();
         Shooting();
     }
@@ -82,7 +95,10 @@ public class Player : MonoBehaviour
 
         if (lives == 0)
         {
+            Camera.main.GetComponent<AudioSource>().Stop();
             AudioSource.PlayClipAtPoint(loseSound, Camera.main.transform.position);
+           /* Gametext.SetActive(true);
+            Gametext_text.text = "Game Over! Press R to Restart!"; */
             Destroy(this.gameObject);
             gameManager.gameOver();
         }
