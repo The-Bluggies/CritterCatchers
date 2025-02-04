@@ -21,16 +21,15 @@ public class Player : MonoBehaviour
     public GameObject Bullet;
     public GameManager gameManager;
 
-<<<<<<< HEAD
-=======
-   /* public GameObject Healthtext;
+
+    public GameObject Healthtext;
     public GameObject Scoretext;
     public GameObject Gametext;
 
     TextMeshProUGUI Healthtext_text;
     TextMeshProUGUI Scoretext_text;
-    TextMeshProUGUI Gametext_text;*/
->>>>>>> e54ee6d78509c181a4dd662f7326170bf137de47
+    TextMeshProUGUI Gametext_text;
+
 
     public AudioClip jarSound;
     public AudioClip damageSound;
@@ -40,9 +39,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       /* Healthtext_text = Healthtext.GetComponent<TextMeshProUGUI>();
-        Scoretext_text = Scoretext.GetComponent<TextMeshProUGUI>();
-        Gametext_text = Gametext.GetComponent<TextMeshProUGUI>(); */
+        //Healthtext_text = Healthtext.GetComponent<TextMeshProUGUI>();
+        //Scoretext_text = Scoretext.GetComponent<TextMeshProUGUI>();
+        //Gametext_text = Gametext.GetComponent<TextMeshProUGUI>(); 
         audioSource = GetComponent<AudioSource>();
         speed = 12f;
         rb = GetComponent<Rigidbody2D>();
@@ -56,7 +55,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Scoretext_text.text = "Score: " + score.ToString();
+        //Scoretext_text.text = "Score: " + score.ToString();
         PlayerDirection();
         Shooting();
     }
@@ -102,8 +101,8 @@ public class Player : MonoBehaviour
         {
             Camera.main.GetComponent<AudioSource>().Stop();
             AudioSource.PlayClipAtPoint(loseSound, Camera.main.transform.position);
-           /* Gametext.SetActive(true);
-            Gametext_text.text = "Game Over! Press R to Restart!"; */
+            //Gametext.SetActive(true);
+            //Gametext_text.text = "Game Over! Press R to Restart!";
             Destroy(this.gameObject);
             gameManager.gameOver();
         }
