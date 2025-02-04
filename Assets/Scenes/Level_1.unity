@@ -2046,6 +2046,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 7057496126316112834, guid: ebc5c400f777d1542ad4290ef0afe1f0, type: 3}
+    - target: {fileID: 9153034658547113984, guid: a25a03b0167fc974bbd4acff8774d9aa, type: 3}
+      propertyPath: enemySound
+      value: 
+      objectReference: {fileID: 8300000, guid: ded1a5648bb7fb14c9e365fbd186c29d, type: 3}
     m_RemovedComponents:
     - {fileID: -6030977463314134192, guid: a25a03b0167fc974bbd4acff8774d9aa, type: 3}
     m_RemovedGameObjects: []
