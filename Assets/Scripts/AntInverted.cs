@@ -27,14 +27,26 @@ public class AntInverted : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>(); 
         startPosition = transform.position;
-        InvokeRepeating("RangedAttack", 0, 2f);
+        InvokeRepeating("RangedAttack", 1f, 2f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        startPosition -= transform.right * Time.deltaTime * moveSpeed;
-        transform.position = startPosition + transform.up * -Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        InvertSine();
+
+    }
+
+    void InvertSine()
+    {
+        if (transform.position.x >= 11)
+        {
+            startPosition -= transform.right * Time.deltaTime * moveSpeed;
+            transform.position = startPosition + transform.up * -Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        } else
+        {
+            transform.position = startPosition + transform.up * -Mathf.Sin(Time.time * frequency + offset) * magnitude;
+        }
     }
 
     void RangedAttack()

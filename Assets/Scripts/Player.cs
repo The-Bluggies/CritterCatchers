@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
             switch (shooting)
             {
                 //FOR ALL SHOOTING CASES, we use Vector3 instead of Vector2 to modify direction because the code just doesn't like it for some reason.
+                // if we don't ever add any shooting modes we can just delete the switch case section of this code.
                 case 1:
                     //Normal Shot
                         Instantiate(Bullet, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
@@ -83,7 +84,6 @@ public class Player : MonoBehaviour
         {
             Destroy(this.gameObject);
             gameManager.gameOver();
-            audioSource.PlayOneShot(loseSound);
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AcidAttack : MonoBehaviour
 {
-    public float acidSpeed = 6f;
+    public float acidSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
