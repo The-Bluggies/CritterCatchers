@@ -59,7 +59,7 @@ public class AntInverted : MonoBehaviour
     {
         if (whatDidIHit.tag == "Weapon")
         {
-            audioSource.PlayOneShot(collectSound);
+            AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position);
             GameObject.Find("Player(Clone)").GetComponent<Player>().finalScore();
             Destroy(this.gameObject);
             Destroy(whatDidIHit.gameObject);

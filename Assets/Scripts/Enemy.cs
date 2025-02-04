@@ -38,12 +38,10 @@ public class Enemy: MonoBehaviour
     {
         if (whatDidIHit.tag == "Weapon")
         {
-            Debug.Log("Score: ");
-            audioSource.PlayOneShot(collectSound);
+            AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position);
             GameObject.Find("Player(Clone)").GetComponent<Player>().finalScore();
             Destroy(this.gameObject);
             Destroy(whatDidIHit.gameObject);
-            Debug.Log("Score: ");
         } else if (whatDidIHit.tag == "Player")
         {
             GameObject.Find("Player(Clone)").GetComponent<Player>().loseALife();

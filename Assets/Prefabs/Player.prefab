@@ -152,7 +152,6 @@ MonoBehaviour:
   Bullet: {fileID: 3864219678481319567, guid: 2926e9e52518c1a4198a02c519413d9a, type: 3}
   gameManager: {fileID: 0}
   jarSound: {fileID: 8300000, guid: 0d4ec788faa1fcb4685082460ae742fb, type: 3}
-  backgroundSound: {fileID: 8300000, guid: 928de92cfdf594946a87f3485a6b3290, type: 3}
   damageSound: {fileID: 8300000, guid: 608f81478fd5e64419a6645e72b572a8, type: 3}
   loseSound: {fileID: 8300000, guid: 6e76f82207d0d504c8ed90ba1ff27c53, type: 3}
 --- !u!50 &7057496126316112860

@@ -3,7 +3,13 @@ guid: 94151de18a8c5004db6e1c69c65f74b9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Bullet: {instanceID: 0}
+  - gameManager: {instanceID: 0}
+  - jarSound: {instanceID: 0}
+  - backgroundSound: {instanceID: 0}
+  - damageSound: {instanceID: 0}
+  - loseSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

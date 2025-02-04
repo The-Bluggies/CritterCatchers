@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     public GameManager gameManager;
 
     public AudioClip jarSound;
-    public AudioClip backgroundSound;
     public AudioClip damageSound;
     public AudioClip loseSound;
     AudioSource audioSource;
@@ -29,7 +28,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.Play();
         speed = 12f;
         rb = GetComponent<Rigidbody2D>();
         shooting = 1;
@@ -79,13 +77,12 @@ public class Player : MonoBehaviour
     }
     public void loseALife()
     {
-        lives--;
         audioSource.PlayOneShot(damageSound);
+        lives--;
 
         if (lives == 0)
         {
-            audioSource.Pause();
-            audioSource.PlayOneShot(loseSound);
+            AudioSource.PlayClipAtPoint(loseSound, Camera.main.transform.position);
             Destroy(this.gameObject);
             gameManager.gameOver();
         }
