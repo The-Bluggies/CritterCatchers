@@ -26,6 +26,7 @@ public class Enemy: MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log("Enemy left the game");
         }
+        
     }
 
     void EnemyMovement()

@@ -10,18 +10,13 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public GameObject Bullet;
     public GameObject Enemy;
-
     public bool isPlayerAlive;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
         GameObject playerInstance = Instantiate(Player, new Vector2(-13, 0), Quaternion.identity);
         isPlayerAlive = true;
-
-
 
     }
 
@@ -35,14 +30,14 @@ public class GameManager : MonoBehaviour
     public void gameOver()
     {
         isPlayerAlive = false;
-
-
+        Time.timeScale = 0;
     }
 
     void Restart()
     {
         if (Input.GetKeyDown(KeyCode.R) && isPlayerAlive == false)
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene("Level_1");
         }
 
