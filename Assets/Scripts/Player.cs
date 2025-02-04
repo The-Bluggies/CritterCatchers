@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     public GameObject Bullet;
     public GameManager gameManager;
 
+
     public AudioClip jarSound;
     public AudioClip damageSound;
     public AudioClip loseSound;
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour
         lives = 3;
         score = 0;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
