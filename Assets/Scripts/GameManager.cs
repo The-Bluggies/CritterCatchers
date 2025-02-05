@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         Restart();
         killSwitch();
 
-        if(score == 1 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_1"))
+        if(score == 20 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_1"))
         {
             Time.timeScale = 0;
             passedText.gameObject.SetActive(true);
