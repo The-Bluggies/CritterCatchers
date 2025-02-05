@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
         {
             Camera.main.GetComponent<AudioSource>().Stop();
             AudioSource.PlayClipAtPoint(loseSound, Camera.main.transform.position);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, loseSound.length);
             gameManager.gameOver();
         }
     }
