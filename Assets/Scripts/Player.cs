@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
     void Shooting()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && lives > 0)
         {
             Instantiate(Bullet, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
             audioSource.PlayOneShot(jarSound);
