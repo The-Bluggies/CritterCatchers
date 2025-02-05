@@ -17,7 +17,7 @@ public class AcidAttack : MonoBehaviour
     {
         transform.Translate(new Vector2(-1, 0) * Time.deltaTime * acidSpeed);
 
-        if (transform.position.x >= 18.5)
+        if (transform.position.x <= -18.5)
         {
             Destroy(this.gameObject);
         }

@@ -12,12 +12,19 @@ public class GameManager : MonoBehaviour
     public GameObject Enemy;
     public bool isPlayerAlive;
 
+    public TextMeshProUGUI livesText;
+    public TextMeshProUGUI scoreText;
+
+    public int score;
+
     // Start is called before the first frame update
     void Start()
     {
         GameObject playerInstance = Instantiate(Player, new Vector2(-13, 0), Quaternion.identity);
         isPlayerAlive = true;
+        playerInstance.GetComponent<Player>().livesText = livesText;
 
+        scoreText.text = "x " + score;
     }
 
     // Update is called once per frame
@@ -52,7 +59,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AddScore(int howMuch)
+    {
+        score = score + howMuch;
+        scoreText.text = "x " + score;
 
+    }
 
 
 }

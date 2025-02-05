@@ -41,9 +41,9 @@ public class Enemy: MonoBehaviour
         if (whatDidIHit.tag == "Weapon")
         {
             AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position);
-            GameObject.Find("Player(Clone)").GetComponent<Player>().finalScore();
             Destroy(this.gameObject);
             Destroy(whatDidIHit.gameObject);
+            GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(1);
         } else if (whatDidIHit.tag == "Player")
         {
             GameObject.Find("Player(Clone)").GetComponent<Player>().loseALife();

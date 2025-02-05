@@ -168,3 +168,4 @@ MonoBehaviour:
   Player: {fileID: 7057496126316112834, guid: ebc5c400f777d1542ad4290ef0afe1f0, type: 3}
   Bullet: {fileID: 3864219678481319567, guid: 2926e9e52518c1a4198a02c519413d9a, type: 3}
   AcidAttack: {fileID: 4005862875744089856, guid: 2edbb2ff038b1254d9803854d392e96b, type: 3}
+  collectSound: {fileID: 8300000, guid: 201b2ac9ce5c97e45b12ed26341b85c9, type: 3}

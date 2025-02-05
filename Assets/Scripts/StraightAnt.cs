@@ -8,7 +8,6 @@ public class StraightAnt : MonoBehaviour
     public GameObject Bullet;
     public GameObject AcidAttack;
 
-    public AudioClip attackSound;
     public AudioClip collectSound;
     AudioSource audioSource;
 
@@ -35,7 +34,6 @@ public class StraightAnt : MonoBehaviour
     void RangedAttack()
     {
         Instantiate(AcidAttack, transform.position, Quaternion.identity);
-        audioSource.PlayOneShot(attackSound);
     }
 
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
@@ -43,10 +41,9 @@ public class StraightAnt : MonoBehaviour
         if (whatDidIHit.tag == "Weapon")
         {
             AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position);
-            GameObject.Find("Player(Clone)").GetComponent<Player>().finalScore();
             Destroy(this.gameObject);
             Destroy(whatDidIHit.gameObject);
-
+            GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(1);
         }
         else if (whatDidIHit.tag == "Player")
         {
