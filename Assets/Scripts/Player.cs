@@ -8,9 +8,9 @@ public class Player : MonoBehaviour
     private float horizontalInput, verticalInput;
     public float speed;
 
-    public int lives;
+    public static int lives;
 
-    public int score;
+    public static int score;
 
     private Rigidbody2D rb;
 
