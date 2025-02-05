@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI loseText;
     public TextMeshProUGUI winText;
     public TextMeshProUGUI goalText;
-   // public TextMeshProUGUI goalText2;
     public TextMeshProUGUI passedText;
 
     public static int score;
@@ -45,11 +44,11 @@ public class GameManager : MonoBehaviour
         Restart();
         killSwitch();
 
-        if(score == 20 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_1"))
+        if(score == 1 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_1"))
         {
             Time.timeScale = 0;
             passedText.gameObject.SetActive(true);
-            audioSource.PlayOneShot(winSound);
+            AudioSource.PlayClipAtPoint(winSound, transform.position);
             Camera.main.GetComponent<AudioSource>().Stop();
 
             if(Input.GetKeyDown(KeyCode.Space))
@@ -64,7 +63,7 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             Camera.main.GetComponent<AudioSource>().Stop();
-            audioSource.PlayOneShot(winSound);
+            AudioSource.PlayClipAtPoint(winSound, transform.position);
             winText.gameObject.SetActive(true);
 
             if(Input.GetKeyDown(KeyCode.Space))

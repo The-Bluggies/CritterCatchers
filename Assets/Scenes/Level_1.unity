@@ -1117,7 +1117,8 @@ MonoBehaviour:
   Bullet: {fileID: 3864219678481319567, guid: 2926e9e52518c1a4198a02c519413d9a, type: 3}
   Enemy: {fileID: 3355307708709263678, guid: a25a03b0167fc974bbd4acff8774d9aa, type: 3}
   isPlayerAlive: 0
-  winSound: {fileID: 8300000, guid: 36022a4fff886dd418ddc3ed3b58269e, type: 3}
+  winSound: {fileID: 8300000, guid: 32a5dea878805fd498f1b41cf17abdee, type: 3}
+  menuSound: {fileID: 8300000, guid: ded1a5648bb7fb14c9e365fbd186c29d, type: 3}
   livesText: {fileID: 1274994076}
   scoreText: {fileID: 951704344}
   loseText: {fileID: 978530812}
@@ -1146,11 +1147,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542315364}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
