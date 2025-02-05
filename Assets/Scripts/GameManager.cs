@@ -14,12 +14,16 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI loseText;
+    public TextMeshProUGUI winText;
 
     public static int score;
 
     // Start is called before the first frame update
     void Start()
     {
+        loseText.gameObject.SetActive(false);
+        winText.gameObject.SetActive(false);
         GameObject playerInstance = Instantiate(Player, new Vector2(-13, 0), Quaternion.identity);
         isPlayerAlive = true;
         playerInstance.GetComponent<Player>().livesText = livesText;
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
+        loseText.gameObject.SetActive(true);
         isPlayerAlive = false;
         Time.timeScale = 0;
     }
