@@ -8,7 +8,6 @@ public class Enemy: MonoBehaviour
     public GameObject Player;
     public GameObject Bullet;
     public AudioClip collectSound;
-   // public AudioClip enemySound;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -32,7 +31,6 @@ public class Enemy: MonoBehaviour
     void EnemyMovement()
     {
         transform.Translate(new Vector2(-1, 0) * Time.deltaTime * 10f);
-       // AudioSource.PlayClipAtPoint(enemySound, Player.transform.position);
     }
 
     //Function that checks to see what Enemy has collided with
