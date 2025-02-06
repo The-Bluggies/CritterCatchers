@@ -27,7 +27,6 @@ public class Enemy: MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log("Enemy left the game");
         }
-        
     }
 
     void EnemyMovement()
@@ -36,15 +35,20 @@ public class Enemy: MonoBehaviour
        // AudioSource.PlayClipAtPoint(enemySound, Player.transform.position);
     }
 
+    //Function that checks to see what Enemy has collided with
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
+        //If Enemy has collided with a jar, destroys both objects and adds 1 to the player's score
         if (whatDidIHit.tag == "Weapon")
         {
             AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position);
             Destroy(this.gameObject);
             Destroy(whatDidIHit.gameObject);
             GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(1);
-        } else if (whatDidIHit.tag == "Player")
+        } 
+        
+        //If Enemy has collided with the player, destroys Enemy and player loses a life
+        else if (whatDidIHit.tag == "Player")
         {
             GameObject.Find("Player(Clone)").GetComponent<Player>().loseALife();
             Destroy(this.gameObject);

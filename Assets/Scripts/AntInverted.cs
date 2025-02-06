@@ -33,7 +33,6 @@ public class AntInverted : MonoBehaviour
     void Update()
     {
         InvertSine();
-
     }
 
     void InvertSine()
@@ -42,7 +41,9 @@ public class AntInverted : MonoBehaviour
         {
             startPosition -= transform.right * Time.deltaTime * moveSpeed;
             transform.position = startPosition + transform.up * -Mathf.Sin(Time.time * frequency + offset) * magnitude;
-        } else
+        }
+        
+        else
         {
             transform.position = startPosition + transform.up * -Mathf.Sin(Time.time * frequency + offset) * magnitude;
         }
@@ -53,8 +54,11 @@ public class AntInverted : MonoBehaviour
         Instantiate(AcidAttack, transform.position + new Vector3(1, 0, 0), Quaternion.identity);
     }
 
+    //Function that checks to see what AntInverted has collided with
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
+
+        //If AntInverted has collided with a jar, destroys both objects and adds 1 to the player's score
         if (whatDidIHit.tag == "Weapon")
         {
             AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position);
@@ -62,6 +66,8 @@ public class AntInverted : MonoBehaviour
             Destroy(whatDidIHit.gameObject);
             GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(1);
         }
+
+        //If AntInverted has collided with the player, destroys AntInverted and player loses a life
         else if (whatDidIHit.tag == "Player")
         {
             GameObject.Find("Player(Clone)").GetComponent<Player>().loseALife();

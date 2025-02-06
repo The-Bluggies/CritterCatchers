@@ -23,6 +23,7 @@ public class AcidAttack : MonoBehaviour
         }
     }
 
+    //Function that is invoked when AcidAttack collides with the player
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
         if (whatDidIHit.tag == "Player")

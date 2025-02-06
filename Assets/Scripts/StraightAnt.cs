@@ -36,8 +36,10 @@ public class StraightAnt : MonoBehaviour
         Instantiate(AcidAttack, transform.position, Quaternion.identity);
     }
 
+    //Function that checks to see what StraightAnt has collided with
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
+        //If StraightAnt has collided with a jar, destroys both objects and adds 1 to the player's score
         if (whatDidIHit.tag == "Weapon")
         {
             AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position);
@@ -45,6 +47,8 @@ public class StraightAnt : MonoBehaviour
             Destroy(whatDidIHit.gameObject);
             GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(1);
         }
+
+        //If StraightAnt has collided with the player, destroys StraightAnt and player loses a life
         else if (whatDidIHit.tag == "Player")
         {
             GameObject.Find("Player(Clone)").GetComponent<Player>().loseALife();

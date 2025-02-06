@@ -15,7 +15,6 @@ public class PlayButton : MonoBehaviour
     public GameObject Credits;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,23 +29,24 @@ public class PlayButton : MonoBehaviour
         
     }
 
+    //Function that loads the first level
     void play()
     {
         SceneManager.LoadScene("Level_1");
     }
+
+    //Function that loads the credit scene
     void credits()
     {
         MainMenu.gameObject.SetActive(false);
         Credits.gameObject.SetActive(true);
-
     }
     
+    //Function that loads the menu scene
     void mainMenu()
     {
         MainMenu.gameObject.SetActive(true);
         Credits.gameObject.SetActive(false);
-
-
     }
 
 }

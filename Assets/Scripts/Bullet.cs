@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Sets the bullet speed
         bulletspeed = 50f;
     }
 
@@ -17,6 +18,7 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(new Vector2(1, 0) * Time.deltaTime * bulletspeed);
 
+        //Destroys a bullet if it's postion is greater than or equal to 18.5
         if (transform.position.x >= 18.5)
         {
             Destroy(this.gameObject);

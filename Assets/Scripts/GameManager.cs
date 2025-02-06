@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public GameObject Bullet;
     public GameObject Enemy;
+
     public bool isPlayerAlive;
+
     public AudioClip winSound;
     AudioSource audioSource;
 
@@ -27,10 +29,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
         loseText.gameObject.SetActive(false);
         winText.gameObject.SetActive(false);
         goalText.gameObject.SetActive(true);
         passedText.gameObject.SetActive(false);
+
         GameObject playerInstance = Instantiate(Player, new Vector2(-13, 0), Quaternion.identity);
         isPlayerAlive = true;
         playerInstance.GetComponent<Player>().livesText = livesText;
@@ -44,6 +48,7 @@ public class GameManager : MonoBehaviour
         Restart();
         killSwitch();
 
+        //if statement that transitions the current scene to level 2 when the player passes level 1
         if(score == 20 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_1"))
         {
             Time.timeScale = 0;
@@ -57,8 +62,9 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1;
                 score = 0;
             }
-
         }
+
+        //if statement that transitions the current scene to the main menu when the player wins
         if(score == 40 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level_2"))
         {
             Time.timeScale = 0;
@@ -72,11 +78,10 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("MainMenu");
                 Time.timeScale = 1;
             }
-        }
-
-        
+        }  
     }
 
+    //Function that is called if the player loses the game
     public void gameOver()
     {
         loseText.gameObject.SetActive(true);
@@ -84,6 +89,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    //Function that restarts the game
     void Restart()
     {
         if (Input.GetKeyDown(KeyCode.R) && isPlayerAlive == false)
@@ -91,7 +97,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             SceneManager.LoadScene("Level_1");
         }
-
     }
 
     void killSwitch()
@@ -103,12 +108,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Function the updates the UI score text
     public void AddScore(int howMuch)
     {
         score = score + howMuch;
         scoreText.text = "x " + score;
-
     }
-
-
 }

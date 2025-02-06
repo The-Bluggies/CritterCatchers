@@ -7,13 +7,10 @@ public class Player : MonoBehaviour
 {
     private float horizontalInput, verticalInput;
     public float speed;
-
     public static int lives;
-
     public static int score;
 
     private Rigidbody2D rb;
-
     private Vector2 movementDirection;
 
     public GameObject Bullet;
@@ -29,7 +26,6 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         audioSource = GetComponent<AudioSource>();
         speed = 12f;
         rb = GetComponent<Rigidbody2D>();
@@ -49,17 +45,14 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         // This determines player movement by considering direction and speed
-        // KEEP THIS HERE BECAUSE Rigidbody2D will get scuffed in normal Update since it uses Unity's physics system
         rb.velocity = movementDirection * speed;
-
-
     }
-
     void PlayerDirection()
     {
         movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
+    //Function that allows the player to shoot jars when the Space Bar is pressed
     void Shooting()
     {
         if (Input.GetKeyDown(KeyCode.Space) && Time.timeScale != 0)
@@ -68,6 +61,8 @@ public class Player : MonoBehaviour
             audioSource.PlayOneShot(jarSound);
         }
     }
+
+    //Function that manages the player's lives and checks to see whether the player is still alive 
     public void loseALife()
     {
         audioSource.PlayOneShot(damageSound);
@@ -82,6 +77,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Function the updates the UI Lives text
     void UpdateLivesText()
     {
         livesText.text = "x " + lives;
