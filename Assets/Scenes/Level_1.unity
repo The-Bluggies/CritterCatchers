@@ -999,7 +999,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 928de92cfdf594946a87f3485a6b3290, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1118,7 +1118,6 @@ MonoBehaviour:
   Enemy: {fileID: 3355307708709263678, guid: a25a03b0167fc974bbd4acff8774d9aa, type: 3}
   isPlayerAlive: 0
   winSound: {fileID: 8300000, guid: 32a5dea878805fd498f1b41cf17abdee, type: 3}
-  menuSound: {fileID: 8300000, guid: ded1a5648bb7fb14c9e365fbd186c29d, type: 3}
   livesText: {fileID: 1274994076}
   scoreText: {fileID: 951704344}
   loseText: {fileID: 978530812}
